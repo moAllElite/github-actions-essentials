@@ -14,29 +14,26 @@ import java.util.List;
 @RestController
 public class SentimentController {
     private  ISentimentService service;
-    @GetMapping("info")
-    public ResponseEntity<String> show() {
-        return ResponseEntity.ok("Hello World this is Mouhamed Niang the great !!!");
-    }
+
 
     @GetMapping
-    public ResponseEntity<List<SentimentDTO>> getSentiments() {
-        return ResponseEntity.ok(service.findAll());
+    public List<SentimentDTO> getSentiments() {
+        return  service.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<SentimentDTO> getSentiment(@PathVariable Long id) {
-        return  ResponseEntity.ok(service.findById(id));
+    public SentimentDTO getSentiment(@PathVariable Long id) {
+        return  service.findById(id);
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
+
     @PostMapping
     public void createSentiment(@RequestBody SentimentDTO sentimentDTO) {
         service.save(sentimentDTO);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<SentimentDTO> updateSentiment(@PathVariable Long id,@RequestBody SentimentDTO sentimentDTO) {
-        return ResponseEntity.ok(service.update(id, sentimentDTO));
+    public SentimentDTO updateSentiment(@PathVariable Long id,@RequestBody SentimentDTO sentimentDTO) {
+        return service.update(id, sentimentDTO);
     }
 }
