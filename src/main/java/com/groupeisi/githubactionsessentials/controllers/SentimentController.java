@@ -35,5 +35,8 @@ public class SentimentController {
         service.save(sentimentDTO);
     }
 
-
+    @PutMapping("/{id}")
+    public ResponseEntity<SentimentDTO> updateSentiment(@PathVariable Long id,@RequestBody SentimentDTO sentimentDTO) {
+        return ResponseEntity.ok(service.update(id, sentimentDTO));
+    }
 }
