@@ -15,8 +15,8 @@
     <description>github-actions-essentials</description>
     <properties>
         <java.version>17</java.version>
-        <docker.user>moallelite</docker.user>
-        <docker.token>dckr_pat_X-JVXAJ6-pOfH-QEP0apI7Nfgig</docker.token>
+        <docker.user/>
+        <docker.token/>
     </properties>
     <dependencies>
         <dependency>
