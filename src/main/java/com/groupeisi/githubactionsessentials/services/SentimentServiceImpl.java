@@ -14,7 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 @Transactional
 public class SentimentServiceImpl implements ISentimentService {
+
     private SentimentRepository sentimentRepository;
+
     private final ISentimentMapper mapper;
 
     @Override
