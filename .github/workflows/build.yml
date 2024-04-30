@@ -36,6 +36,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker image
         run: mvn   spring-boot:build-image -Dspring-boot.build-image.publish=true -DskipTests
+          -Ddocker.user=${{ secrets.DOCKERHUB_USERNAME }} -Ddocker.token=${{ secrets.DOCKER_PASSWORD }} -DskipTests
 
       - name: Push Docker image
         run: docker push github-actions-essentials
