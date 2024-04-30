@@ -39,6 +39,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+          tag: mouniang/github-actions-essentials:latest
 
       - name: build & Push Docker image
         uses: docker/build-push-action@v2
