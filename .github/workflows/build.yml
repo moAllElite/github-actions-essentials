@@ -28,7 +28,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B -Dmaven.test.skip=true package --file pom.xml
+      run: |
+        mvn -Dmaven.test.skip=true clean 
+        mvn -B -Dmaven.test.skip=true package --file pom.xml
     - name: Build Docker Image
       uses: docker/build-push-action@v2
       with:
