@@ -3,7 +3,7 @@ LABEL authors="ahmed"
 WORKDIR  /app
 
 #COPY target/github-actions-essentials-0.0.1.jar /app/github-actions-essentials.jar
-ARG JAR_FILE=taget/*.jar
+ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
 EXPOSE 8080
 
