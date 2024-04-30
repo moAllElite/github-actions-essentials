@@ -41,12 +41,11 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: build & Push Docker image
-        uses: docker/build-push-action@v5
-      #  run: docker push mouniang/github-actions-essentials:latest
+        uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tag: mouniang/github-actions-essentials:latest
+          tags: mouniang/github-actions-essentials:latest
 #
 #    - name: Publish to Docker Hub
 #      run: |
