@@ -31,7 +31,7 @@ jobs:
         run: mvn -Dmaven.test.skip=true -B  package --file pom.xml
 
       - name: Build Docker image
-        run: mvn -Dmaven.test.skip=true  spring-boot:build-image -Dspring-boot.build-image.publish=true
+        run: mvn   spring-boot:build-image -Dspring-boot.build-image.publish=true -DskipTests
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
