@@ -19,5 +19,6 @@ jobs:
         run: mvn -Dmaven.test.skip=true -B  package --file pom.xml
 
       - name: Publish to Docker Hub
-        run:  mvn -B spring-boot:build-image-Dspring-boot.build-image.publish=true
-          \-Ddocker.user=${{secrets.DOCKERHUB_USERNAME}}-Ddocker.token=${{secrets.DOCKER_TOKEN }} \-DskipTest
+        run: mvn  spring-boot:build-image \-DskipTest
+        #  mvn -B spring-boot:build-image-Dspring-boot.build-image.publish=true
+       #   \-Ddocker.user=${{secrets.DOCKERHUB_USERNAME}}-Ddocker.token=${{secrets.DOCKER_TOKEN }} \-DskipTest
