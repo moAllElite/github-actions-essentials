@@ -15,8 +15,6 @@
     <description>github-actions-essentials</description>
     <properties>
         <java.version>17</java.version>
-        <docker.user/>
-        <docker.token/>
     </properties>
     <dependencies>
         <dependency>
@@ -57,13 +55,13 @@
 
     <build>
         <plugins>
-            <!--plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
                     <image>
-                        <name>docker.io/moallelite:${project.version}</name>
+                        <name>docker.io/moallelite/github-actions-essentials:${project.version}</name>
                         <publish>true</publish>
                     </image>
                     <excludes>
@@ -73,7 +71,7 @@
                         </exclude>
                     </excludes>
                 </configuration>
-            </plugin-->
+            </plugin>
         </plugins>
     </build>
 </project>
