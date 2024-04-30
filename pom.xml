@@ -60,10 +60,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <image>
-                        <name>docker.io/moallelite/github-actions-essentials:${project.version}</name>
-                        <publish>true</publish>
-                    </image>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
