@@ -32,16 +32,16 @@ jobs:
      # - name: Build with Maven
      #   run: mvn -Dmaven.test.skip=true -B  package --file pom.xml
       - name: Login to DockerHub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: build & Push Docker image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tag: mouniang/github-actions-demo:latest
+          tags: mouniang/github-actions-essentials:latest
 #
 #    - name: Publish to Docker Hub
 #      run: |
