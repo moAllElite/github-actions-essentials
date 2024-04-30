@@ -39,7 +39,7 @@ jobs:
 
       - name: build & Push Docker image
         uses: docker/build-push-action@v2
-        run: docker push github-actions-essentials
+
         with:
           context: .
           push: true
