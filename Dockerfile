@@ -2,7 +2,7 @@ FROM openjdk:17
 LABEL authors="ahmed"
 WORKDIR  /app
 
-COPY target/github-actions-essentials-0.0.1.jar /app/github-actions-essentials.jar
+COPY target/github-actions-essentials-0.0.1.jar /app
 
 #COPY ${JAR_FILE} app.jar
 EXPOSE 8080
