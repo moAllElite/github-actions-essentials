@@ -63,7 +63,7 @@
                 <version>3.2.5</version>
                 <configuration>
                     <image>
-                        <name>docker.io/moallelite/github-actions:${project.version}</name>
+                        <name>docker.io/moallelite:${project.version}</name>
                         <publish>true</publish>
                     </image>
                     <excludes>

@@ -34,13 +34,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build Docker image
-        run: |
-          mvn   spring-boot:build-image -Dspring-boot.build-image.publish=true -DskipTests
-          -Ddocker.user=${{ secrets.DOCKERHUB_USERNAME }} -Ddocker.token=${{ secrets.DOCKER_PASSWORD }} -DskipTests
 
-      - name: Push Docker image
+      - name: build & Push Docker image
+        uses: docker/build-push-action@v2
         run: docker push github-actions-essentials
+        with:
+          context: .
+          push: true
+          tag: mouniang/github-actions-demo:latest
 #
 #    - name: Publish to Docker Hub
 #      run: |
