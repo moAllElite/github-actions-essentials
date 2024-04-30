@@ -15,8 +15,6 @@
     <description>github-actions-essentials</description>
     <properties>
         <java.version>17</java.version>
-        <docker.user/>
-        <docker.token/>
     </properties>
     <dependencies>
         <dependency>
