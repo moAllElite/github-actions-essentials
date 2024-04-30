@@ -37,16 +37,19 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build and Push to DockerHub
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v2
         with:
-            context: .
-            push: true
-            tags: mouniang/github-actions-essentials:latest
+          context: .
+          push: true
+          tags: mouniang/github-actions-essentials:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
 
 #
 #    - name: Publish to Docker Hub
 #      run: |
-#          mvn -B   spring-boot:build-image -Dspring-boot.build-image.publish=true
-#        -Ddocker.user=${{ secrets.DOCKERHUB_USERNAME }} -Ddocker.token=${{ secrets.DOCKERHUB_TOKEN }} -DskipTests
+       #   mvn -B   spring-boot:build-image -Dspring-boot.build-image.publish=true
+       # -Ddocker.user=${{ secrets.DOCKERHUB_USERNAME }} -Ddocker.token=${{ secrets.DOCKERHUB_TOKEN }} -DskipTests
 
 
