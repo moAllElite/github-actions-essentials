@@ -8,6 +8,4 @@ COPY target/github-actions-essentials-0.0.1.jar github-actions-essentials.jar
 EXPOSE 8080
 
 
-#ENTRYPOINT ["java", "-jar","/app.jar"]
-
-CMD ["java","-jar","/github-actions-essentials.jar"]
+ENTRYPOINT ["java","-jar","/github-actions-essentials.jar"]
