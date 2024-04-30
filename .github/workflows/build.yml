@@ -28,7 +28,31 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run:  |
+        mvn clean
+        mvn -B -Dmaven.test.skip=true package --file pom.xml
+    - name: Build Docker Image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        dockerfile : Dockerfile
+        push: true
+        tags:  ${{secrets.DOCKERHUB_USERNAME}}/demo-github-actions:latest
+    - name: Login to Docker HUB
+      uses:  docker/login-action@v1
+      with:
+        username: ${{secrets.DOCKERHUB_USERNAME}}
+        password:  ${{secrets.DOCKERHUB_PASSWORD}}
+
+    - name: Push to Docker Hub
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        dockerfile: Dockerfile
+        push: true
+        tags: ${{secrets.DOCKERHUB_USERNAME}}/demo-github-actions:latest
+
+
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
