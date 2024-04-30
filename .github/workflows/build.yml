@@ -42,7 +42,7 @@ jobs:
 
       - name: build & Push Docker image
        # uses: docker/build-push-action@v5
-        run: docker push mouniang/github-action-essentials:latest
+        run: docker push mouniang/github-actions-essentials:latest
  #       with:
 #          context: .
 #          push: true
