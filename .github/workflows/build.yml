@@ -46,7 +46,8 @@ jobs:
         with:
           context: .
           push: true
-          tag: mouniang/github-actions-essentials:latest
+          tags: mouniang/github-actions-demo:latest
+
 #
 #    - name: Publish to Docker Hub
 #      run: |
