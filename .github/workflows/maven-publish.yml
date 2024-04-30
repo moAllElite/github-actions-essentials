@@ -41,6 +41,7 @@ jobs:
           password:  ${{secrets.DOCKERHUB_PASSWORD}}
           tags: ${{secrets.DOCKERHUB_USERNAME}}/demo-github-actions:latest
 
+
         #   run:  |
         
 #        mvn -B   spring-boot:build-image -Dspring-boot.build-image.publish=true    -Ddocker.user=${{secrets.DOCKERHUB_USERNAME}} -Ddocker.token=${{secrets.DOCKERHUB_TOKEN}} -DskipTests
