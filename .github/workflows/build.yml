@@ -28,6 +28,8 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+
+
       - name: Build with Maven
         run: mvn -Dmaven.test.skip=true -B  package
       - name: Login to DockerHub
@@ -42,14 +44,14 @@ jobs:
           context: .
           push: true
           tags: mouniang/github-actions-essentials:latest
-       #   cache-from: type=gha
-       #   cache-to: type=gha,mode=max
+      #   cache-from: type=gha
+      #   cache-to: type=gha,mode=max
 
 
-#
-#    - name: Publish to Docker Hub
-#      run: |
-       #   mvn -B   spring-boot:build-image -Dspring-boot.build-image.publish=true
-       # -Ddocker.user=${{ secrets.DOCKERHUB_USERNAME }} -Ddocker.token=${{ secrets.DOCKERHUB_TOKEN }} -DskipTests
+      #
+      #    - name: Publish to Docker Hub
+      #      run: |
+      #   mvn -B   spring-boot:build-image -Dspring-boot.build-image.publish=true
+      # -Ddocker.user=${{ secrets.DOCKERHUB_USERNAME }} -Ddocker.token=${{ secrets.DOCKERHUB_TOKEN }} -DskipTests
 
 
